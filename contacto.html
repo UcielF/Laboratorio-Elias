@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Laboratorio Elías | Estética & Prótesis Dental</title>
+  <meta name="description"
+    content="Laboratorio de estética y prótesis dental en Mar del Plata. Zirconio, disilicato de litio, implantes y removibles." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="contacto.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+  
+  <!-- Header (overlay sobre hero) -->
+  <header class="site-header" id="top">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Ir al inicio">
+        <img src="img/logo2.png" alt="Laboratorio Elías" id="siteLogo" class="brand__logo" />
+        
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+
+
+        <div class="nav__panel" id="navPanel">
+
+          <div class="nav__logo">
+            <img src="img/logo3.png" alt="Laboratorio Elías">
+          </div>
+
+          <a href="index.html" class="nav__link">Volver</a>
+
+
+        
+
+          <a class="nav__cta" href="https://wa.me/5492235242094" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            Solicitar Turno
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+
+
+    <section class="section contacto" id="contacto">
+  <div class="container">
+    <div class="section__head">
+      <h2>Contacto</h2>
+      <p class="muted">Escribinos y contanos qué trabajo necesitás (prótesis, zirconio, implantes, etc.).</p>
+    </div>
+
+    <div class="contact">
+      <div class="contact__box">
+        <h3>Canales directos</h3>
+        <p class="muted">Respondemos a la brevedad.</p>
+
+        <div class="contact__actions">
+          <a class="btn btn--primary w-full"
+             href="https://wa.me/5492235242094?text=Hola%20Laboratorio%20El%C3%ADas!%20Quiero%20consultar%20por%20un%20trabajo%20de%20pr%C3%B3tesis."
+             target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i>
+            WhatsApp
+          </a>
+
+          <a class="btn btn--ghost w-full" href="tel:+5492235242094">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            Llamar
+          </a>
+
+          <a class="btn btn--ghost w-full"
+             href="https://www.google.com/maps?q=12%20de%20Octubre%203979%20Mar%20del%20Plata"
+             target="_blank" rel="noopener">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            Cómo llegar
+          </a>
+        </div>
+
+        <div class="mini">
+         
+        </div>
+      </div>
+
+      <form class="form" id="form-whatsapp" aria-label="Formulario de contacto">
+        <h3>Mensaje rápido</h3>
+        <p class="muted">Completá los datos y te respondemos por WhatsApp.</p>
+
+        <label>
+          <span>Nombre</span>
+          <input type="text" id="nombre" placeholder="Tu nombre" required />
+        </label>
+
+        <label>
+          <span>Clínica / Profesional</span>
+          <input type="text" id="clinica" placeholder="Nombre de clínica o profesional" />
+        </label>
+
+        <label>
+          <span>Trabajo</span>
+          <input type="text" id="trabajo" placeholder="Zirconio / Prótesis / Implantes / Removibles..." required />
+        </label>
+
+        <label>
+          <span>Detalle</span>
+          <textarea id="detalle" rows="4"
+            placeholder="Contanos qué necesitás (material, tiempos, color, cantidad, etc.)"></textarea>
+        </label>
+
+        <button type="submit" class="btn btn--primary w-full">
+          <i class="fab fa-whatsapp"></i>
+          Enviar
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+
+        <!-- Columna 1: Marca + redes -->
+        <div class="footer__brand">
+          <div class="footer__brandRow">
+            <img src="img/logo3.png" alt="Laboratorio Elías" class="footer__logo">
+
+            <div class="footer__brandText">
+              <div class="footer__brandName">Laboratorio Elías</div>
+              <div class="footer__brandTag">Estética &amp; Prótesis dental</div>
+            </div>
+          </div>
+
+          <div class="footer__social">
+            <a class="footer__link" href="https://wa.me/5492235242094" target="_blank" rel="noopener">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+            <a class="footer__link" href="https://instagram.com/laboratoriodental.elias" target="_blank" rel="noopener">
+              <i class="fa-brands fa-instagram"></i> Instagram
+            </a>
+          </div>
+
+          <div class="footer__meta">
+            <span class="footer__addr">12 de Octubre 3979 · Mar del Plata</span>
+            <span class="footer__copy">© <span id="year"></span></span>
+          </div>
+        </div>
+
+       <!-- Columna 2: Navegación -->
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <h4 class="footer__title">Navegación</h4>
+          <a href="index.html">Volver al inicio</a>
+ 
+        </nav>
+        </nav>
+
+        <!-- Columna 3: Mini mapa + CTA -->
+        <div class="footer__map">
+          <div class="footer__mapFrame">
+            <iframe title="Mapa — 12 de Octubre 3979, Mar del Plata"
+              src="https://www.google.com/maps?q=12+de+Octubre+3979+Mar+del+Plata&output=embed" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+          <a class="footer__cta"
+            href="https://www.google.com/maps/dir/?api=1&destination=12+de+Octubre+3979+Mar+del+Plata" target="_blank">
+            <i class="fa-solid fa-location-dot"></i> Cómo llegar
+          </a>
+        </div>
+
+      </div>
+    </footer>
+  </main>
+  
+  <script src="script.js" defer></script>
+</body>
+
+</html>
