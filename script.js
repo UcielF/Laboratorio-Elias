@@ -6,21 +6,15 @@
   const header = document.querySelector(".site-header");
   const logo = document.getElementById("siteLogo");
 
-  window.addEventListener("scroll", () => {
+  function onScroll() {
+    if (!header) return;
+    const scrolled = window.scrollY > 10;
+    header.classList.toggle("is-scrolled", scrolled);
+    if (logo) logo.src = scrolled ? "img/logo1.png" : "img/logo2.png";
+  }
 
-    if (window.scrollY > 40) {
-
-      header.classList.add("is-scrolled");
-      logo.src = "img/logo1.png";
-
-    } else {
-
-      header.classList.remove("is-scrolled");
-      logo.src = "img/logo2.png";
-
-    }
-
-  });
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
 
   // Year
   if (year) year.textContent = new Date().getFullYear();
@@ -68,39 +62,46 @@
     items.forEach((li) => io.observe(li));
   })();
 
-  // Form -> WhatsApp message
+  // Form — envío pendiente de backend
   if (form) {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-
-      const data = new FormData(form);
-      const name = (data.get("name") || "").toString().trim();
-      const phone = (data.get("phone") || "").toString().trim();
-      const message = (data.get("message") || "").toString().trim();
-
-      const lines = [
-        "Hola! Soy " + (name || "—"),
-        phone ? "Mi teléfono: " + phone : null,
-        "Consulta:",
-        message || "—"
-      ].filter(Boolean);
-
-      const text = encodeURIComponent(lines.join("\n"));
-      const wa = `https://wa.me/5492235242094?text=${text}`;
-      window.open(wa, "_blank", "noopener,noreferrer");
-      form.reset();
+      // TODO: conectar con backend PHP
     });
   }
-  (() => {
-    const header = document.querySelector(".site-header");
 
-    function onScroll() {
-      if (!header) return;
-      header.classList.toggle("is-scrolled", window.scrollY > 10);
-    }
+  // Adjuntos: mostrar lista de archivos seleccionados
+  const fileInput = document.getElementById("fileInput");
+  const fileList = document.getElementById("fileList");
+  const fileDrop = document.getElementById("fileDrop");
 
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll(); // estado inicial
-  })();
+  if (fileInput && fileList) {
+    fileInput.addEventListener("change", () => renderFiles(fileInput.files));
+  }
+
+  if (fileDrop) {
+    fileDrop.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      fileDrop.classList.add("is-over");
+    });
+    fileDrop.addEventListener("dragleave", () => fileDrop.classList.remove("is-over"));
+    fileDrop.addEventListener("drop", (e) => {
+      e.preventDefault();
+      fileDrop.classList.remove("is-over");
+      fileInput.files = e.dataTransfer.files;
+      renderFiles(fileInput.files);
+    });
+  }
+
+  function renderFiles(files) {
+    if (!fileList) return;
+    fileList.innerHTML = "";
+    Array.from(files).forEach((file) => {
+      const li = document.createElement("li");
+      const sizeMB = (file.size / 1024 / 1024).toFixed(1);
+      li.innerHTML = `<span><i class="fa-solid fa-file"></i> ${file.name} <small>(${sizeMB} MB)</small></span>`;
+      fileList.appendChild(li);
+    });
+  }
 
 })();

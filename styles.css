@@ -30,7 +30,7 @@ a{color:inherit}
 
 /* Al hacer scroll: blur + más contraste */
 .site-header.is-scrolled{
-  background: rgba(0, 0, 0, 0.592);
+  background: rgba(0, 0, 0, 0.838);
   border-bottom: 1px solid rgba(95, 95, 95, 0.14);
   backdrop-filter: blur(10px);
 }
@@ -64,8 +64,6 @@ a{color:inherit}
 
 
 
-
-
 .brand__text{
   transition:all .3s ease;
 }
@@ -89,6 +87,9 @@ a{color:inherit}
   border-radius:2px;
   transition: transform .25s ease, opacity .2s ease;
 }
+
+.nav__toggle span:hover{ background: #28282847; }
+.nav__toggle:hover{ background: rgba(159, 159, 159, 0.449); }
 
 /* Posición inicial */
 .nav__toggle span:nth-child(1){ transform: translateY(-5px); }
@@ -168,7 +169,6 @@ a{color:inherit}
 }
 .hero__bg{
   position:absolute; inset:0;
-  background: url("img/hero.jpg") center/cover no-repeat;
   transform: scale(1.02);
 }
 .hero__overlay{
@@ -486,7 +486,7 @@ a{color:inherit}
     flex-direction:column;
     align-items:center;
 
-    background: rgba(255, 255, 255, 0.481);
+    background: rgba(116, 116, 116, 0.762);
     backdrop-filter: blur(18px);
 
     border:none;
